@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Juego del ahorcado</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ahorcado</h1>
+      <div>
+        <p>Descubre la palabra secreta. Solo puedes fallar diez veces. <p/>
+        <p>
+          <button onclick="inicio()">A jugar</button>
+        </p>
+      </div>
+      <span id = 'palabra'></span>
+      <div>
+        <p>
+          Letra: <input type="text" id="letra" size="2" />
+          <button onclick="validar()">Validar</button>
+        </p>
+      </div>
+      <p> <span id = 'adivinando'></span> </p>
+      <p> <span id = 'usadas'></span> </p>
+      <div id="resultado" align='center'>
+      </div>
+      <script src="ahorcado.js"></script>
+    </div>
+  </body>
+</html>
