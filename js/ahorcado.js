@@ -1,4 +1,4 @@
-function obtenerPalabraSecreta() { //funcion para obtener una palabra encriptada
+function obtenerPalabraSecreta() { //funcion para obtener una palabra aleatoria
   var libreriaPalabras = ["multimedia", "internauta", "servidor", "protocolo", "cortafuegos","navegador", "nodo", "marco", "pagina", "telaraña",
   "descargar", "virtual", "memoria", "disco", "local", "conectar", "desconectar", "encaminador", "internet", "dominio","dinamico", "hipervinculo",
   "enlace", "marcador", "ordenador", "lapiz", "ofimatica", "informe" ];
@@ -11,12 +11,12 @@ function obtenerPalabraSecreta() { //funcion para obtener una palabra encriptada
 var hombre =  [        "______" + '<br/>',
                        "   | " + '<br/>',
                        "   | " + '<br/>',
-                       "   | " + '<br/>',
                        "   O" + '<br/>',
-                       "  /|\\\n" + '<br/>',
-                       " / | \\\n" + '<br/>',
-                       "  /\\\n    " + '<br/>',
-                       " /  \\\n      " + '<br/>',
+                       " /\n",
+                       "| " ,
+                       "\\\n   " + '<br/>',
+                       " /     ",
+                       "\\\n  " + '<br/>',
                        "______" + '<br/>'];
 
 var palabra = obtenerPalabraSecreta (); //se obtiene la palabra aleatoria
@@ -41,6 +41,9 @@ function imprimirletra(letras) { //funcion que muestra las letras encontradas
       }
     }
   }
+  if(start.indexOf('*')==-1){
+    alert('Ganaste!!!')
+  }
   document.getElementById('adivinando').innerHTML ='Adivinando: ' + start.join('');
 }
 
@@ -54,7 +57,7 @@ function validar() { //funcion que valida si se encontro la palabra ingresada
     }
   }
   imprimirletra(letras); //se imprime las letras encontradas
-  document.getElementById('usadas').innerHTML ='Letras usadas: ' + letras; //se imprime las letras que se ingresa
+  document.getElementById('usadas').innerHTML ='Letras utilizadas: ' + letras; //se imprime las letras que se ingresa
   var dibujo = '';
   for(var i = 0; i < fallos; i++){
      dibujo += hombre[i]; //se crea un string con la figura del ahorcado dependiendo de la cantidad de fallos
